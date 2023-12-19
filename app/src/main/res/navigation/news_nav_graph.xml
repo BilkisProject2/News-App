@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/HeadlinesFragment">
+
+    <fragment
+        android:id="@+id/ArticleFragment"
+        android:name="com.example.newsapp.Ui.Fragment.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+
+        <argument
+            android:name="article"
+            app:argType="com.example.newsapp.Model.Article">
+        </argument>
+
+    </fragment>
+    <fragment
+        android:id="@+id/Favourites"
+        android:name="com.example.newsapp.Ui.Fragment.Favourites"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favourites_to_articleFragment"
+            app:destination="@id/ArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HeadlinesFragment"
+        android:name="com.example.newsapp.Ui.Fragment.HeadlinesFragment"
+        android:label="fragment_headlines"
+        tools:layout="@layout/fragment_headlines" >
+        <action
+            android:id="@+id/action_headlinesFragment_to_articleFragment"
+            app:destination="@id/ArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.example.newsapp.Ui.Fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment2_to_articleFragment"
+            app:destination="@id/ArticleFragment" />
+    </fragment>
+</navigation>
